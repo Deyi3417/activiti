@@ -1,0 +1,35 @@
+server:
+  port: 9999
+#  servlet:
+#    context-path: /api
+
+
+spring:
+  application:
+    name: activiti
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/activiti?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+
+  session:
+    timeout: 86400
+  # swagger configuration information
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  activiti:
+    database-schema-update: true
+    db-history-used: true
+    history-level: full
+    check-process-definitions: false
+
+
+
+swagger:
+  enable: true
